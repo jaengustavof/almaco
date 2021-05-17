@@ -53,7 +53,7 @@ a {
     background: #231f20;
     overflow: hidden;
     transition: 1s;
-   /* display: none;*/ /*****/
+    display: none; /*****/
 }
 
 .logoContainerTotal {
@@ -102,7 +102,7 @@ a {
     left: 2%;
     z-index: 10;
     transition: 1s;
-    /*display: none; *//***/
+    /*display: none;*/ /***/
 }
 
 .logo img {
@@ -112,7 +112,6 @@ a {
 .container {
     height: calc(100vh - 80px);
     width: 100%;
-
     display: flex;
     scroll-behavior: smooth;
     overflow: auto;
@@ -175,7 +174,7 @@ section {
     background: url('../rsc/img/fondoGrid.png');
     opacity: 0;
     transition: 1s;
-   /* display: none; *//*****/
+    /*display: none;*/ /*****/
 }
 
 
@@ -192,6 +191,14 @@ section {
     position: relative;
     z-index: 0;
     transition: 1s;
+}
+
+.wrapperAnchor {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 1343px;    
 }
 
 .whoWeAre {
@@ -240,11 +247,9 @@ section {
     align-items: center;
 }
 
-
 .wwaTextContainer h1, .wwaTextContainer h2 {
     width: 45%;
     color: white;
-
 }
 
 .secondTitle {
@@ -409,8 +414,6 @@ section {
     line-height: 32px;
 }
 
-
-
 .indexLogoSecondSection {
     width: 100%;
     display: flex;
@@ -468,7 +471,7 @@ section {
     border-left: 1px solid white;  
     border-right: 1px solid white!important;   
     overflow: hidden;
-    /*display: none;*/ /******/
+    /*display: none;*//******/
 }
 
 .arroww {
@@ -567,7 +570,6 @@ section {
   z-index: 0;
   top: 0;
   left: 0;
-
 }
 
 .sec3two {
@@ -917,18 +919,14 @@ section {
     font-weight: 500;
 }
 
-
-
 .fSectionDinamicTitle {
     transition: 1s;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .fourthIndexName {
     width: 100%;
     height: calc(100% - 70px);
-
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -936,9 +934,212 @@ section {
     cursor: pointer;
 }
 
-
-
 /******** Fourth Section END*******/
+/************** Footer ************/
+
+footer {
+    height: 100%;
+    width: 1200px;
+    background: black;
+    flex-shrink: 0;
+    position: relative;
+    border-left: 1px solid white;   
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContainer {
+    height: 800px;
+    width: 800px;
+    background: #eeece6;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerTextContainer {
+    width: 550px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerTextContSectionOne {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footerTextContSectionTwo {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footerTopLeft, .footerTopRight {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footerBottomLeft, .footerBottomRight {
+    width: 100%;
+    height: 30%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footerTextContSectionOne h3, .footerTopRight h3, .footerBottomRight h3{
+    font-size: 40px;
+    line-height: 35px;
+}  
+
+.linksContainer {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.linksContainer p {
+    font-size: 14px;
+    line-height: 16px;
+    color: #231f20;
+    font-weight: 700;
+    transition: 1s;
+}
+
+.linksContainer p:hover {
+    color:#f85800;
+    transition: 1s;
+}
+
+.footerTopRight img {
+    width: 100%;
+}
+
+.footerContactCont {
+    margin-top: 57px;
+}
+
+.contactContainer {
+    width: 100%;
+    height: 100px;
+}
+
+.contactDiv {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.ctc {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.ctcInfo {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 2px;
+}
+
+.ctc h4{
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.smLogoCont {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer {
+    display: flex;
+    width: 100%;
+    height: 40px;
+}
+
+input {
+    height: 40px;
+    width: 80%;
+    background: #ff6647;
+    border: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    color: white;
+    font-family: 'Lexend Deca', cursive;
+} 
+
+#send {
+    height: 40px;
+    width: 20%;
+    background: #ff6647;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.5s;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+
+#send:hover {
+    font-size: 22px;
+    transition: 0.5s;
+}
+
+input::placeholder{
+    color: white;
+    font-family: 'Lexend Deca', cursive;
+    font-size: 20px;
+    line-height: 18px;
+}
+
+.allRights {
+    margin-top: 80px;
+}
+
+.allRights p {
+    font-size: 15px;
+}
+
+
+
+
+/************ Footer END **********/
 
 
 /* MEDIA QUERIES */
@@ -946,14 +1147,29 @@ section {
 /* SMART TV */
 @media screen and (min-width: 1921px) {} 
 /* DESKTOP */
-@media screen and (max-width: 1920px) {}  
+@media screen and (max-width: 1680px) {}  
 /* laptop */
-@media screen and (max-width: 1360px) {}
+@media screen and (max-width: 1600px) {}
+/* laptop */
+@media screen and (max-width: 1536px) {} 
+/* laptop */
+@media screen and (max-width: 1440px) {}  
+/* laptop */
+@media screen and (max-width: 1400px) {} 
+/* laptop */
+@media screen and (max-width: 1366px) {}
+/* laptop */
+@media screen and (max-width: 1280px) {}
+/* laptop */
+@media screen and (max-width: 1152px) {}
 /* laptop */
 @media screen and (max-width: 1024px) {}
+/* tablet */
+@media screen and (max-width: 800px) {}
 /* tablet */
 @media screen and (max-width: 768px) {}
 /* smat phone */
 @media screen and (max-width: 478px) {}
 /* Smart watch */
 @media screen and (max-width: 320px) {}
+
