@@ -16,10 +16,16 @@
 1024 x 768
 800 x 600
 
-.ourFounders {
-    height: 1026px;
+
+
+1680 x 1050
+
+.firstSection {
+width: 190%;
 }
 
-.wwaSectionContainer2 {
-    height: 869px;
+.whoWeCont {
+left: 28%;
 }
+
+Animación footer

@@ -36,6 +36,7 @@ h3 {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 /****** Logo Animation ********/
@@ -53,7 +54,7 @@ a {
     background: #231f20;
     overflow: hidden;
     transition: 1s;
-    display: none; /*****/
+    /*display: none;*/ /*****/
 }
 
 .logoContainerTotal {
@@ -139,13 +140,18 @@ nav {
 }
 
 .linkContainer a {
-    color: white;
+
     font-size: 25px;
     margin-left: 60px;
     transition: 0.5s;
 }
 
 .linkContainer a:hover {
+    color: #fa5800;
+    transition: 0.5s;
+}
+
+.linkSelected {
     color: #fa5800;
     transition: 0.5s;
 }
@@ -1147,7 +1153,20 @@ input::placeholder{
 /* SMART TV */
 @media screen and (min-width: 1921px) {} 
 /* DESKTOP */
-@media screen and (max-width: 1680px) {}  
+@media screen and (max-width: 1680px) {
+    
+/*First Section*/
+.firstSection {
+width: 190%;
+}
+
+.whoWeCont {
+left: 28%;
+}
+
+/*Second Section*/
+
+}  
 /* laptop */
 @media screen and (max-width: 1600px) {}
 /* laptop */

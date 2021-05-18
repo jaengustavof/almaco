@@ -1,6 +1,11 @@
       $( document ).ready(function() {
-     $(function() {
 
+        $(".container").scroll(function(){
+          console.log(this.scrollLeft)
+        });
+        
+     $(function() {
+      
       let sectionPosition = 1;
       let sectionLeft = 0;
       let secciones = document.getElementsByTagName("section");
@@ -17,7 +22,6 @@
               time +=400;
             }
       }
-
       function wwa2(){
        $(".secondTitle").css("opacity", "1");
         $(".secondTitle").css("left", "0");
@@ -31,7 +35,6 @@
               time +=400;
           }
       }
-
       function wwa3(){
         $(".thirdTitle").css("opacity", "1");
         $(".thirdTitle").css("left", "0");
@@ -64,16 +67,23 @@
       })();
 
         //Menu//
+        let menuLink = $(".menuLink");
+        function menuSelected(){
+          for(menu of menuLink){
+            $(menu).removeClass("linkSelected");
+          }
+        }
         //Who We Are//
         $("#wwAreButton").click(function(){
+          menuSelected()
+          $(this).addClass("linkSelected");
 
+          $(".container").scrollLeft(1343);
           $(".logo").css("opacity", 1);
           wwa1();
-
           setInterval(function(){
             wwa2();
           }, 800);
-
           setInterval(function(){
             wwa3();
           }, 1200);
@@ -81,26 +91,24 @@
         //Who We Are//
         //Our Brands//
         $("#ourBrandsButton").click(function(){
-
           $(".logo").css("opacity", 0);
+          menuSelected()
+          $(this).addClass("linkSelected");
           wwa1();
-
           setInterval(function(){
             wwa2();
           }, 800);
-
           setInterval(function(){
             wwa3();
           }, 1200);
-
           deploy();
         });
         //Our Brands//
         //Carrers//
         $("#careerButton").click(function(){
-
           $(".logo").css("opacity", 1);
-
+          menuSelected()
+          $(this).addClass("linkSelected");
           wwa1();
           setInterval(function(){
             wwa2();
@@ -112,6 +120,8 @@
         });
         //Blog//
         $("#blogButton").click(function(){
+          menuSelected()
+          $(this).addClass("linkSelected");
           $(".logo").css("opacity", 1);
           wwa1();
           setInterval(function(){
@@ -145,15 +155,21 @@
             }
             */    
           //Scroll Manual  
-
-          if(this.scrollLeft <= 1343){
-
-
-          }else{
-
-
-
-          }
+          if(this.scrollLeft < 1200){
+            menuSelected();
+          }else if(this.scrollLeft >= 1343 && this.scrollLeft < 3063){
+            menuSelected();
+            $(menuLink[0]).addClass("linkSelected");
+          }else if(this.scrollLeft >= 3063 && this.scrollLeft < 5083){
+            menuSelected();
+            $(menuLink[1]).addClass("linkSelected");
+          }else if(this.scrollLeft >= 5083 && this.scrollLeft < 7003){
+            menuSelected();
+            $(menuLink[2]).addClass("linkSelected");
+          }else if(this.scrollLeft >= 7003){
+            menuSelected();
+            $(menuLink[3]).addClass("linkSelected");
+          } 
 
            this.scrollLeft -= (delta * 200);
            //console.log(delta);
