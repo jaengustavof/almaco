@@ -18,14 +18,21 @@
 
 
 
-1680 x 1050
+1600 x 900
 
-.firstSection {
-width: 190%;
+h1, h2 {
+    font-size: 50px;
+}
+
+.spanContainer {
+font-size: 25px;
+}
+
+.wwaTextContainer {
+    height: 100%;
+    width: 70%;
 }
 
 .whoWeCont {
-left: 28%;
+    width: 1414px;
 }
-
-Animación footer

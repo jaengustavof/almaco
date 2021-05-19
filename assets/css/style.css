@@ -54,7 +54,7 @@ a {
     background: #231f20;
     overflow: hidden;
     transition: 1s;
-    /*display: none;*/ /*****/
+    display: none; /*****/
 }
 
 .logoContainerTotal {
@@ -384,12 +384,12 @@ section {
     transition: 1s ease-in-out;
 }
 
-.moreToKnow {
+.moreToKnow, .indexText {
     cursor: pointer;
-    transition: 1s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
-.moreToKnow:hover{
+.moreToKnow:hover, .indexText:hover{
     color: #fa5800; 
     transition: 0.5s;
 }
@@ -516,7 +516,7 @@ section {
 }
 
 .arrowButtonTop {
-      position: absolute;
+    position: absolute;
     top: 50px;
     right: 145px;
     width: 145px;
@@ -535,7 +535,6 @@ section {
 }
 
 .arrowButton p, .arrowButtonTop p  {
-
     font-size: 16px;
     transition: 1s;
 }
@@ -572,10 +571,10 @@ section {
 }
 
 #myVideo {
-  position: relative;
-  z-index: 0;
-  top: 0;
-  left: 0;
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
 }
 
 .sec3two {
@@ -1154,21 +1153,170 @@ input::placeholder{
 @media screen and (min-width: 1921px) {} 
 /* DESKTOP */
 @media screen and (max-width: 1680px) {
-    
+
+/*Nav & Container*/
+nav {
+    height: 70px;
+}
+.container {
+    height: calc(100vh - 70px);
+}
 /*First Section*/
 .firstSection {
-width: 190%;
+    width: 190%;
+}
+.whoWeCont {
+    left: 28%;
+}
+/*Second Section*/
+.secTwo {
+    top:686px;
+} 
+.secThree {
+    top:736px;
+} 
+.secFour {
+    top:786px;
+} 
+
+}  /* End (max-width: 1680px) */
+
+/* laptop */
+@media screen and (max-width: 1600px) {
+/*General*/
+h1, h2 {
+    font-size: 50px;
 }
 
+.logo img {
+    width: 80%;
+}
+
+/*Nav & Container*/
+nav {
+    height: 60px;
+}
+.linkContainer a {
+    font-size: 20px;
+}
+.container {
+    height: calc(100vh - 60px);
+}
+/*First Section*/
+.spanContainer {
+    font-size: 25px;
+}
+.wwaTextContainer {
+    height: 100%;
+    width: 70%;
+}
 .whoWeCont {
-left: 28%;
+    width: 1414px;
 }
 
 /*Second Section*/
+.indexLogoSecondSection img {
+    height: 65%;
+}
 
-}  
-/* laptop */
-@media screen and (max-width: 1600px) {}
+.seconSectContentText {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.secondSectionContent {
+    width: 445px;
+    height: 376px;
+}
+
+.sectionIndex {  
+    height: 35px;
+}
+
+.secTwo {
+    top: 592px;
+}
+
+.secThree {
+    top: 627px;
+}
+
+.secFour {
+    top: 662px;
+}
+
+/*Third Section*/
+.careerHeading h2 {
+    font-size: 150px;
+}
+
+.careerHeading3 h3 {
+    font-size: 54px;
+}
+
+.arroww img {
+    height: 58%;
+}
+
+.arrowButton {
+    bottom: 70px;
+}
+
+/*footer*/
+.footerContainer {
+    height: 650px;
+    width: 650px;
+}
+
+.footerTextContainer {
+    width: 457px;
+    height: 420px;
+}
+
+.allRights {
+    margin-top: 19px;
+}
+
+.footerTextContSectionOne h3, .footerTopRight h3, .footerBottomRight h3 {
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.smLogoCont, .smLogoCont img {
+    height: 30px;
+}
+
+.smLogoCont a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctc h4 {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+input {
+    height: 30px;
+}
+
+#send {
+    height: 30px;
+}
+
+input::placeholder{
+    font-size: 18px;
+    line-height: 16px;
+}
+
+.inputContainer {
+    height: 30px;
+}
+
+}/* End (max-width: 1600px) */
+
+
 /* laptop */
 @media screen and (max-width: 1536px) {} 
 /* laptop */
