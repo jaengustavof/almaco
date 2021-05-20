@@ -4,8 +4,8 @@ $( document ).ready(function() {
       console.log(this.scrollLeft)
     });
     let executed = false;
-    let deviceWith = $(window).innerWidth();
-    console.log("Device Width: "+deviceWith)
+    let deviceWidth = $(window).innerWidth();
+    console.log("Device Width: "+deviceWidth)
         
     $(function() {
 
@@ -77,12 +77,18 @@ $( document ).ready(function() {
         $("#wwAreButton").click(function(){
           menuSelected()
           $(this).addClass("linkSelected");
-          if (deviceWith >1680) {
+          if (deviceWidth >1680) {
             $(".container").scrollLeft(1343);            
-          }else if (deviceWith <= 1680 && deviceWith>1600){
+          }else if (deviceWidth <= 1680 && deviceWidth>1600){
             $(".container").scrollLeft(1483);
-          }else if (deviceWith <= 1600){
+          }else if (deviceWidth <= 1600 && deviceWidth >1536){
             $(".container").scrollLeft(1400);
+          }else if (deviceWidth <= 1536&& deviceWidth >1440){
+            $(".container").scrollLeft(1358);
+          }else if (deviceWidth <= 1440&& deviceWidth >1400){
+            $(".container").scrollLeft(1308);
+          }else if (deviceWidth <= 1400){
+            $(".container").scrollLeft(1208);
           }
 
 
@@ -99,7 +105,7 @@ $( document ).ready(function() {
         //Our Brands//
         $("#ourBrandsButton").click(function(){
           $(".logo").css("opacity", 0);
-          menuSelected()
+          menuSelected();
           $(this).addClass("linkSelected");
           wwa1();
           setInterval(function(){
@@ -185,7 +191,7 @@ $( document ).ready(function() {
           console.log(this.scrollLeft);
 
           //Menu Link Highlight
-          if(deviceWith >1600){
+          if(deviceWidth >1600){
             if(this.scrollLeft < 1200){
               menuSelected();
             }else if(this.scrollLeft >= 1343 && this.scrollLeft < 3063){
@@ -201,7 +207,7 @@ $( document ).ready(function() {
               menuSelected();
               $(menuLink[3]).addClass("linkSelected");
             } 
-          }else if(deviceWith <=1600){
+          }else if(deviceWidth <=1600 && deviceWidth > 1536){
               if(this.scrollLeft < 1400){
               menuSelected();
             }else if(this.scrollLeft >= 1400 && this.scrollLeft < 2839){
@@ -214,6 +220,54 @@ $( document ).ready(function() {
               menuSelected();
               $(menuLink[2]).addClass("linkSelected");
             }else if(this.scrollLeft >= 6039){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+            }
+          }else if(deviceWidth <= 1536 && deviceWidth > 1440){
+            if(this.scrollLeft < 1308){
+              menuSelected();
+            }else if(this.scrollLeft >= 1308 && this.scrollLeft < 2483){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 2483 && this.scrollLeft < 4276){
+              menuSelected();
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 4276&& this.scrollLeft < 5692){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 5692){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+            }
+          }else if(deviceWidth <= 1440 && deviceWidth > 1400){
+            if(this.scrollLeft < 1308){
+              menuSelected();
+            }else if(this.scrollLeft >= 1308 && this.scrollLeft < 2483){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 2483 && this.scrollLeft < 4180){
+              menuSelected();
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 4180&& this.scrollLeft < 5600){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 5600){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+            }
+          }else if(deviceWidth <= 1400){
+            if(this.scrollLeft < 1308){
+              menuSelected();
+            }else if(this.scrollLeft >= 1308 && this.scrollLeft < 2483){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 2483 && this.scrollLeft < 4180){
+              menuSelected();
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 4180&& this.scrollLeft < 5600){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 5600){
               menuSelected();
               $(menuLink[3]).addClass("linkSelected");
             }
@@ -271,36 +325,38 @@ $( document ).ready(function() {
        // console.log(indexKnow);
         function cssTop(two, three, four){
 
-            $(".secTwo").css("top", two+"px");
-            $(".secThree").css("top", three+"px");
-            $(".secFour").css("top", four+"px");
+            $(".secTwo").css("top", two);
+            $(".secThree").css("top", three);
+            $(".secFour").css("top", four);
         }
+
         function cero() {
           for(index of indexKnow){
             $(indexKnow[0]).removeClass("indexNone");
             $(indexKnow).css("opacity",1);
           }
           $(indexKnow[0]).css("opacity",0);
-          if(deviceWith >1680){          
-            cssTop(706, 756, 806);
-          }else if(deviceWith<=1680 && deviceWith >1600){
-            cssTop(686, 736, 786);
-          }else if(deviceWith<=1600){
-            cssTop(592, 627, 662);
+          if(deviceWidth >1600){          
+            cssTop("calc(100% - 150px)", "calc(100% - 100px)", "calc(100% - 50px)");
+          }else if(deviceWidth<=1600 && deviceWidth >1360){
+            cssTop("calc(100% - 105px)", "calc(100% - 70px)", "calc(100% - 35px)");
+          }else if(deviceWidth<=1360){
+            cssTop("calc(100% - 75px)", "calc(100% - 50px)", "calc(100% - 25px)");
           }
         }
+
         function uno() {
           for(index of indexKnow){
             $(indexKnow[0]).removeClass("indexNone");
             $(indexKnow).css("opacity",1);
           }
           $(indexKnow[1]).css("opacity",0);
-          if(deviceWith >1680){          
-            cssTop(50, 756, 806);
-          }else if(deviceWith<=1680 && deviceWith >1600){
-            cssTop(50, 736, 786);
-          }else if(deviceWith<=1600){
-            cssTop(35, 627, 662);
+          if(deviceWidth >1600){          
+            cssTop("50px", "calc(100% - 100px)", "calc(100% - 50px)");
+          }else if(deviceWidth<=1600 && deviceWidth >1360){
+            cssTop("35px", "calc(100% - 70px)", "calc(100% - 35px)");
+          }else if(deviceWidth<=1360){
+            cssTop("25px", "calc(100% - 50px)", "calc(100% - 25px)");
           }
         }
         function dos() {
@@ -309,12 +365,12 @@ $( document ).ready(function() {
             $(indexKnow).css("opacity",1);
           }
           $(indexKnow[2]).css("opacity",0);
-          if(deviceWith >1680){          
-            cssTop(50, 100, 806);
-          }else if(deviceWith<=1680 && deviceWith >1600){
-            cssTop(50, 100, 786);
-          }else if(deviceWith<=1600){
-            cssTop(35, 70, 662);
+          if(deviceWidth >1600){          
+            cssTop("50px", "100px", "calc(100% - 50px)");
+          }else if(deviceWidth<=1600 && deviceWidth >1360){
+            cssTop("35px", "70px", "calc(100% - 35px)");
+          }else if(deviceWidth<=1360){
+            cssTop("25px", "50px", "calc(100% - 25px)");
           }
         }
         function tres(){
@@ -323,10 +379,12 @@ $( document ).ready(function() {
             $(indexKnow).css("opacity",1);
           }        
           $(indexKnow[3]).css("opacity",0);
-          if(deviceWith>1600){
-            cssTop(50, 100, 150);
-          }else if (deviceWith <= 1600){
-            cssTop(35, 70, 105);
+          if(deviceWidth>1600){
+            cssTop("50px", "100px", "150px");
+          }else if (deviceWidth <= 1600 && deviceWidth >1360){
+            cssTop("35px", "70px", "105px");
+          }else if(deviceWidth<=1360){
+            cssTop("25px", "50px", "75px");
           }
         }
 
@@ -449,10 +507,10 @@ $( document ).ready(function() {
           $(fourthSectionText[0]).css("display", "flex");
           $(fourthSecIndex[0]).css("width", "116px");
           $(fourthSecIndex[0]).css("background", "rgba(0,0,0,0.5)");
-          if(deviceWith >1600){
+          if(deviceWidth >1600){
             $(fSectionDinamicTitle[0]).css("fontSize", "50px");
             $(fSectionDinamicTitle[0]).css("lineHeight", "60px");
-          }else if(deviceWith <=1600){
+          }else if(deviceWidth <=1600){
             $(fSectionDinamicTitle[0]).css("fontSize", "40px");
             $(fSectionDinamicTitle[0]).css("lineHeight", "50px");
           }
@@ -474,10 +532,10 @@ $( document ).ready(function() {
               $(fourthSecIndex[index]).css("width", "116px");
               $(fourthSecIndex[index]).css("background", "rgba(0,0,0,0.5)");
               $(fourthSectionText[index]).css("display", "flex");
-              if(deviceWith >1600){
+              if(deviceWidth >1600){
                 $(fSectionDinamicTitle[index]).css("fontSize", "50px");
                 $(fSectionDinamicTitle[index]).css("lineHeight", "60px");
-              }else if(deviceWith <=1600){
+              }else if(deviceWidth <=1600){
                 $(fSectionDinamicTitle[index]).css("fontSize", "40px");
                 $(fSectionDinamicTitle[index]).css("lineHeight", "50px");
               }
