@@ -4,18 +4,31 @@
 1536 x 864 -ok
 1440 x 900 -ok
 1400 x 1050 -ok
-1366 x 768	
-1360 x 768
-1280 x 1024
-1280 x 960
-1280 x 800
-1280 x 768
-1280 x 720
-1280 x 600
+1366 x 768 - ok	
+1360 x 768 - ok
+1280 x 1024 - ok
+1280 x 960 - ok
+1280 x 800 - ok
+1280 x 768 - ok
+1280 x 720 - ok
+1280 x 600 - ok
 1152 x 864
 1024 x 768
 800 x 600
 
-1366 
-- Pendiente areglar imagenes del blog
--Falta Menu Highlight
+Ver el footer
+subrayar items menu
+
+
+
+.seconSectContentText {
+    font-size: 12px;
+    line-height: 17px;
+}
+
+
+.secondSectButton {
+    width: 108px;
+    height: 44px;
+
+$(".secondSectButton").css("fontSize", "14px");

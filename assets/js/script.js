@@ -5,49 +5,94 @@ $( document ).ready(function() {
     });
     let executed = false;
     let deviceWidth = $(window).innerWidth();
-    console.log("Device Width: "+deviceWidth)
+    let deviceHeight = $(window).innerHeight();
+    console.log("Device Width: "+deviceWidth);
+    console.log("Device Height: "+deviceHeight);
         
     $(function() {
 
-      function wwa1(){
-        var span1 = $(".spanText1");
-          let time = 100;
-            for(let i = 0; i < span1.length; i++){
-              setTimeout(function() { 
-                $(span1[i]).css("opacity", "1");
-                $(span1[i]).css("top", "0");
-              }, time);
-              time +=400;
-            }
-      }
-
-      function wwa2(){
-       $(".secondTitle").css("opacity", "1");
-        $(".secondTitle").css("left", "0");
-        var span2 = $(".spanText2");
-        var time = 100;
-          for(let i = 0; i < span2.length; i++){
-            setTimeout(function() { 
-              $(span2[i]).css("opacity", "1");
-              $(span2[i]).css("top", "0");
-            }, time);
-              time +=400;
+//Responsive 1280//
+        if(deviceWidth <=1280 && deviceWidth >1152){
+          if(deviceHeight <= 1024 && deviceHeight >657){
+            $(".secondSectionContent").css("height", "415px");
+            $(".seconSectContentLogo").css("height", "120px");
+            $(".seconSectContentText").css("fontSize", "24px");
+            $(".seconSectContentText").css("lineHeight", "34px");
+            $(".seconSectContentText").css("marginTop", "20px");
+          }else if(deviceHeight <= 657 && deviceHeight >625){
+            $(".secondSectionContent").css("height", "290px");
+            $(".seconSectContentLogo").css("height", "90px");
+            $(".seconSectContentText").css("fontSize", "20px");
+            $(".seconSectContentText").css("lineHeight", "28px");
+            $(".seconSectContentText").css("marginTop", "20px");
+            $("#myVideo").css("width", "100%");
+          }else if(deviceHeight <= 625 && deviceHeight > 577){
+            $(".secondSectionContent").css("height", "270px");
+            $(".seconSectContentLogo").css("height", "80px");
+            $(".seconSectContentText ").css("height", "173px");
+            $(".seconSectContentText").css("fontSize", "18px");
+            $(".seconSectContentText").css("lineHeight", "26px");
+            $(".seconSectContentText").css("marginTop", "20px");
+            $(".secondSectButton").css("width", "124px");
+            $(".secondSectButton").css("height", "60px");
+            $("#myVideo").css("width", "100%");
+          }else if(deviceHeight <= 577 && deviceHeight > 457){
+            $(".firstText1").css("width", "850px");
+            $("#testText").css("fontSize", "70px");
+            $("#testText").css("lineHeight", "80px");
+            $(".indexLogoSecondSection").css("paddingTop", "0px");
+            $(".secondSectionContent").css("height", "200px");
+            $(".seconSectContentLogo").css("height", "65px");        
+            $(".seconSectContentText ").css("height", "160px");
+            $(".seconSectContentText").css("fontSize", "16px");
+            $(".seconSectContentText").css("lineHeight", "23px");
+            $(".seconSectContentText").css("marginTop", "6px");
+            $(".secondSectButton").css("width", "114px");
+            $(".secondSectButton").css("height", "50px");
+            $(".secondSectButton").css("fontSize", "14px");
+            $("#myVideo").css("width", "100%");
+            $(".arrowImg").css("height", "45%");
+            $(".fourthIndexName").css("paddingBottom", "8px");
+            $(".footerContainer").css("height", "500px");
+            $(".footerContainer").css("width", "500px");
+            $(".footerTextContainer").css("height", "357px");
+            $(".footerTextContainer").css("width", "316px");
+          }else if(deviceHeight <= 457){
+            $(".seconSectContentLogo").css("height", "60px");          
+            $(".seconSectContentText ").css("height", "119px");
+            $(".seconSectContentText").css("fontSize", "12px");
+            $(".seconSectContentText").css("lineHeight", "19px");
+            $(".seconSectContentText").css("marginTop", "5px");
+            $(".secondSectionContent").css("height", "144px");       
+            $(".secondSectButton").css("width", "90px");
+            $(".secondSectButton").css("height", "44px");
+            $(".secondSectButton").css("fontSize", "12px");
+            $(".secondSectionContent").css("top", "73px");
+            $("#myVideo").css("width", "100%");
+            $(".arrowImg").css("height", "28%");
+            $(".careersTextCont2").css("height", "397px");
+            $(".careersTextCont2TitleH3").css("fontSize", "39px");
+            $(".careersTextCont2TitleH3").css("lineHeight", "59px");
+            $(".h4containerH4").css("fontSize", "23px");
+            $(".h4containerH4").css("lineHeight", "29px");
+            $(".opportunitiesContainer").css("height", "265px");
+            $(".footerContainer").css("height", "390px");
+            $(".footerContainer").css("width", "390px");
+            $(".footerTextContainer").css("height", "216px");
+            $(".footerTextContainer").css("width", "293px"); 
+            $(".footerTextContSectionTwo").css("width", "163px");
+            $(".footerTextContSectionOne").css("width", "130px");
+            $(".footerTopLeft").css("height", "69%");
+            $(".ctcInfo").css("justifyContent", "flex-end")
+            $(".fourthIndexName").css("paddingBottom", "8px");
+            $(".footerH3").css("fontSize", "20px");
+            $(".footerH3").css("lineHeight", "20px");
+            $(".footerH4").css("fontSize", "13px");
+            $(".footerRespParr").css("fontSize", "8px");
+            $(".footerLinksParr").css("fontSize", "8px");
           }
-      }
+        }//Responsive 1280//
 
-      function wwa3(){
-        $(".thirdTitle").css("opacity", "1");
-        $(".thirdTitle").css("left", "0");
-        var span3 = $(".spanText3");
-        time = 100;
-          for(let i = 0; i < span3.length; i++){
-            setTimeout(function() { 
-              $(span3[i]).css("opacity", "1");
-              $(span3[i]).css("top", "0");
-            }, time);
-            time +=400;
-          }
-      }
 
       let deploy = (function() {
         return function() {
@@ -77,29 +122,11 @@ $( document ).ready(function() {
         $("#wwAreButton").click(function(){
           menuSelected()
           $(this).addClass("linkSelected");
-          if (deviceWidth >1680) {
-            $(".container").scrollLeft(1343);            
-          }else if (deviceWidth <= 1680 && deviceWidth>1600){
-            $(".container").scrollLeft(1483);
-          }else if (deviceWidth <= 1600 && deviceWidth >1536){
-            $(".container").scrollLeft(1400);
-          }else if (deviceWidth <= 1536&& deviceWidth >1440){
-            $(".container").scrollLeft(1358);
-          }else if (deviceWidth <= 1440&& deviceWidth >1400){
-            $(".container").scrollLeft(1308);
-          }else if (deviceWidth <= 1400){
-            $(".container").scrollLeft(1208);
-          }
 
+            $(".container").scrollLeft(0);                
 
           $(".logo").css("opacity", 1);
-          wwa1();
-          setInterval(function(){
-            wwa2();
-          }, 800);
-          setInterval(function(){
-            wwa3();
-          }, 1200);
+         
         });
         //Who We Are//
         //Our Brands//
@@ -107,13 +134,6 @@ $( document ).ready(function() {
           $(".logo").css("opacity", 0);
           menuSelected();
           $(this).addClass("linkSelected");
-          wwa1();
-          setInterval(function(){
-            wwa2();
-          }, 800);
-          setInterval(function(){
-            wwa3();
-          }, 1200);
           deploy();
         });
         //Our Brands//
@@ -122,13 +142,6 @@ $( document ).ready(function() {
           $(".logo").css("opacity", 1);
           menuSelected()
           $(this).addClass("linkSelected");
-          wwa1();
-          setInterval(function(){
-            wwa2();
-          }, 800);
-          setInterval(function(){
-            wwa3();
-          }, 1200);
           deploy();
         });
         //Blog//
@@ -136,13 +149,6 @@ $( document ).ready(function() {
           menuSelected()
           $(this).addClass("linkSelected");
           $(".logo").css("opacity", 1);
-          wwa1();
-          setInterval(function(){
-            wwa2();
-          }, 800);
-          setInterval(function(){
-            wwa3();
-          }, 1200);
           deploy();
         });
         //Menu//
@@ -191,113 +197,124 @@ $( document ).ready(function() {
           console.log(this.scrollLeft);
 
           //Menu Link Highlight
-          if(deviceWidth >1600){
-            if(this.scrollLeft < 1200){
-              menuSelected();
-            }else if(this.scrollLeft >= 1343 && this.scrollLeft < 3063){
+          if(deviceWidth >1680){
+            if(this.scrollLeft < 1751){
               menuSelected();
               $(menuLink[0]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 3063 && this.scrollLeft < 5083){
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 1751 && this.scrollLeft < 3649){
               menuSelected();
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 5083 && this.scrollLeft < 7003){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 7003){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-            } 
-          }else if(deviceWidth <=1600 && deviceWidth > 1536){
-              if(this.scrollLeft < 1400){
-              menuSelected();
-            }else if(this.scrollLeft >= 1400 && this.scrollLeft < 2839){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 2839 && this.scrollLeft < 4439){
-              menuSelected();
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 4439 && this.scrollLeft < 6039){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 6039){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-            }
-          }else if(deviceWidth <= 1536 && deviceWidth > 1440){
-            if(this.scrollLeft < 1308){
-              menuSelected();
-            }else if(this.scrollLeft >= 1308 && this.scrollLeft < 2483){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 2483 && this.scrollLeft < 4276){
-              menuSelected();
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 4276&& this.scrollLeft < 5692){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 5692){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-            }
-          }else if(deviceWidth <= 1440 && deviceWidth > 1400){
-            if(this.scrollLeft < 1308){
-              menuSelected();
-            }else if(this.scrollLeft >= 1308 && this.scrollLeft < 2483){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 2483 && this.scrollLeft < 4180){
-              menuSelected();
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 4180&& this.scrollLeft < 5600){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 5600){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-            }
-          }else if(deviceWidth <= 1400){
-            if(this.scrollLeft < 1308){
-              menuSelected();
-            }else if(this.scrollLeft >= 1308 && this.scrollLeft < 2483){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 2483 && this.scrollLeft < 4180){
-              menuSelected();
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 4180&& this.scrollLeft < 5600){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 5600){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-            }
-          }
-          
-          // END Menu Link Highlight
-
-
-        //Scroll Effect Section 1.2//
-            if(this.scrollLeft >= 500) {
-              wwa1();
-            }
-            if(this.scrollLeft >= 800) {
-              wwa2();
-            }
-            if(this.scrollLeft >= 1100) {
-              wwa3()
-            }
-
-            //One Time Function for Section 2//
-            if( this.scrollLeft >=2300){
               deploy();
-            }
-            //Logo fadeOut Second Section
-            if(this.scrollLeft > 2800 && this.scrollLeft <= 5000){
+              $(menuLink[1]).addClass("linkSelected");
               $(".logo").css("opacity", 0);
-            }else{
+            }else if(this.scrollLeft >= 3649 && this.scrollLeft < 5589){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 5589){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
               $(".logo").css("opacity", 1);
             }
-         });
+          }else if(deviceWidth <=1680 && deviceWidth > 1600){
+            if(this.scrollLeft < 1529){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 1529 && this.scrollLeft < 3229){
+              menuSelected();
+              deploy();
+              $(".logo").css("opacity", 0);
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 3229 && this.scrollLeft < 4889){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 4889){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }
+          }else if(deviceWidth <=1600 && deviceWidth >1440){
+            if(this.scrollLeft < 1400){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 1400 && this.scrollLeft < 3000){
+              menuSelected();
+              deploy();
+              $(".logo").css("opacity", 0);
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 3000 && this.scrollLeft < 4699){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 4699){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }
+          }else if(deviceWidth <=1440 && deviceWidth > 1400){
+            if(this.scrollLeft < 1339){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 1339 && this.scrollLeft < 2779){
+              menuSelected();
+              deploy();
+              $(".logo").css("opacity", 0);
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 2779 && this.scrollLeft < 4219){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 4219){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }
+          }else if(deviceWidth <=1400 && deviceWidth > 1366){
+            if(this.scrollLeft < 1299){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 1299 && this.scrollLeft < 2739){
+              menuSelected();
+              deploy();
+              $(".logo").css("opacity", 0);
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 2739 && this.scrollLeft < 4179){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 4179){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }
+          }else if(deviceWidth <=1366){
+            if(this.scrollLeft < 1267){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 1267 && this.scrollLeft < 2631){
+              menuSelected();
+              deploy();
+              $(".logo").css("opacity", 0);
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 2631 && this.scrollLeft < 3997){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }else if(this.scrollLeft >= 3997){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+              $(".logo").css("opacity", 1);
+            }
+          }         
+          // END Menu Link Highlight
+
+         });//End mousewheel//
 
         //main Section//  
         setTimeout(function(){          
@@ -322,9 +339,10 @@ $( document ).ready(function() {
         let indexText = $(".indexText");
         let indexTextSpan = $(".indexTextSpan");
         let indexTextPar = $(".indexTextPar");
+
+        
        // console.log(indexKnow);
         function cssTop(two, three, four){
-
             $(".secTwo").css("top", two);
             $(".secThree").css("top", three);
             $(".secFour").css("top", four);
@@ -338,9 +356,9 @@ $( document ).ready(function() {
           $(indexKnow[0]).css("opacity",0);
           if(deviceWidth >1600){          
             cssTop("calc(100% - 150px)", "calc(100% - 100px)", "calc(100% - 50px)");
-          }else if(deviceWidth<=1600 && deviceWidth >1360){
+          }else if(deviceWidth<=1600 && deviceWidth >1366){
             cssTop("calc(100% - 105px)", "calc(100% - 70px)", "calc(100% - 35px)");
-          }else if(deviceWidth<=1360){
+          }else if(deviceWidth<=1366){
             cssTop("calc(100% - 75px)", "calc(100% - 50px)", "calc(100% - 25px)");
           }
         }
@@ -353,9 +371,9 @@ $( document ).ready(function() {
           $(indexKnow[1]).css("opacity",0);
           if(deviceWidth >1600){          
             cssTop("50px", "calc(100% - 100px)", "calc(100% - 50px)");
-          }else if(deviceWidth<=1600 && deviceWidth >1360){
+          }else if(deviceWidth<=1600 && deviceWidth >1366){
             cssTop("35px", "calc(100% - 70px)", "calc(100% - 35px)");
-          }else if(deviceWidth<=1360){
+          }else if(deviceWidth<=1366){
             cssTop("25px", "calc(100% - 50px)", "calc(100% - 25px)");
           }
         }
@@ -367,9 +385,9 @@ $( document ).ready(function() {
           $(indexKnow[2]).css("opacity",0);
           if(deviceWidth >1600){          
             cssTop("50px", "100px", "calc(100% - 50px)");
-          }else if(deviceWidth<=1600 && deviceWidth >1360){
+          }else if(deviceWidth<=1600 && deviceWidth >1366){
             cssTop("35px", "70px", "calc(100% - 35px)");
-          }else if(deviceWidth<=1360){
+          }else if(deviceWidth<=1366){
             cssTop("25px", "50px", "calc(100% - 25px)");
           }
         }
@@ -381,9 +399,9 @@ $( document ).ready(function() {
           $(indexKnow[3]).css("opacity",0);
           if(deviceWidth>1600){
             cssTop("50px", "100px", "150px");
-          }else if (deviceWidth <= 1600 && deviceWidth >1360){
+          }else if (deviceWidth <= 1600 && deviceWidth >1366){
             cssTop("35px", "70px", "105px");
-          }else if(deviceWidth<=1360){
+          }else if(deviceWidth<=1366){
             cssTop("25px", "50px", "75px");
           }
         }
@@ -441,7 +459,6 @@ $( document ).ready(function() {
 //////////Second Section//////////
 //////////Second Section//////////
 //////////Second Section//////////
-
         //Third Section//
         var pixels = 0;
         $(".arrowButton").click(function(){
@@ -519,7 +536,11 @@ $( document ).ready(function() {
           let backImg0 = "url('assets/rsc/img/section4back1.webp')";
           let backImg1 = "url('assets/rsc/img/section4back2.webp')";
           let backImg2 = "url('assets/rsc/img/section4back3.webp')";
+          let backImg3 = "url('assets/rsc/img/section4back11366.webp')";
+          let backImg4 = "url('assets/rsc/img/section4back21366.webp')";
+          let backImg5 = "url('assets/rsc/img/section4back31366.webp')";
           let arrImg = [backImg0,backImg1,backImg2];
+          let arrImg1366 = [backImg3,backImg4,backImg5]
 
           function changeFourth(index){
               for(let i = 0; i <fourthSectionText.length; i++){
@@ -539,7 +560,14 @@ $( document ).ready(function() {
                 $(fSectionDinamicTitle[index]).css("fontSize", "40px");
                 $(fSectionDinamicTitle[index]).css("lineHeight", "50px");
               }
-              $(".fourthSectionContent").css("background", arrImg[index]);
+
+              if(deviceWidth >1366){
+                $(".fourthSectionContent").css("background", arrImg[index]);
+              }else if(deviceWidth <=1366){
+                $(".fourthSectionContent").css("background", arrImg1366[index]);
+                $(".fourthSectionContent").css("backgroundSize", "cover");
+              }
+              
 
           }
 

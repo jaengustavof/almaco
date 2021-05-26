@@ -13,16 +13,17 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Epilogue', cursive;
+    
 }
 
 body {
      background: #231f20;
+     font-family: 'Epilogue', cursive;
 }
 
 h1, h2, h3, h4 {
 
-    font-family: 'Lexend Deca', cursive;
+    font-family: 'Lexend Deca', cursive!important;
     font-weight: normal;
 }
 
@@ -166,128 +167,85 @@ section {
     transition: 1s;
      transition-timing-function: ease-in-out;
 }
-
 .firstSection{
     height: 100%;
-    width: 170%;
+    width: 100%;
+    background: #231f20;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-shrink: 0;
     position: relative;
-    border-right: 1px solid white;   
-    background: url('../rsc/img/fondoGrid.png');
-    opacity: 0;
-    transition: 1s;
-    /*display: none;*/ /*****/
+   /* display: none;*/  
+   overflow: hidden; 
 }
-
-.wrapper {
-    width: 2056px;
-    height: 100%;
-    background: url('../rsc/img/fondoMain.webp');
-    background-size: cover;
-    background-position: center; 
-    opacity: 0;
-    position: relative;
-    z-index: 0;
-    transition: 1s;
-}
-
-.wrapperAnchor {
-    width: 50px;
+/*
+.firstContainer {
+    width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 1;
-    left: 1343px;    
-}
-
-.whoWeAre {
-    width: calc(100% - 2056px);
-    height: 100%;
-    background: #fa5800;
-}
-
-.whoWeCont {
-    width: 1626px;
-    height: 600px;
-    position: relative;
-    transform: translate(-50%,-50%);
-    top: 55%;
-    left: 32%;
+    transition: 1s;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.containerWheWeAre {
-    width: 100%;
-    height: 33%;
-    display: flex;
-    align-items: center;
-}
-
-.first {
-    justify-content: flex-start;
-}
-
-.second {
     justify-content: center;
-}
-
-.third {
-    justify-content: flex-end;
-}
-
-.wwaTextContainer {
-    height: 100%;
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    transition: 1s;
 }
 
-.wwaTextContainer h1, .wwaTextContainer h2 {
-    width: 45%;
+.firstTextContainer h1, .firstTextContainer h2 {
+    font-size: 105px;
+    line-height: 118px;
+    margin: 0;
+    font-family: 'Lexend Deca', cursive!important;
+    font-weight: 400;
     color: white;
 }
 
-.secondTitle {
-    width: 30%!important;
+.first1 {
+    background: #f9b60c;
+    flex-shrink: 0;
+    z-index: 0;
+    left: 0;
+    width: 0%;
+
 }
 
-.spanContainer {
-    width: 55%;
-    height: 105px;
-    font-size: 30px;
+.first2 {
+    background: #f85800;
+    flex-shrink: 0;
+    z-index: 1;
+    left: 0%;
+    width: 0%;
+
+}
+
+.first3 {
+    background: #225bb8;
+    flex-shrink: 0;
+    z-index: 3;
+   left: 0%;
+   width: 0%;
+}
+
+.firstTextContainer {
+    width: 1411px;
+    height: 492px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;    
 }
 
-.secondSpan {
-    width: 65%;
+.firstText1 {
+    width: 1050px;
 }
 
-.spanContainer span {
-    opacity:0;
-    position: relative;
-    font-weight: 400;
-    top: 50%;
-    transition: 1s;
+.firstText3 {
+    width: 854px;
 }
-
-.firstTitle, .secondTitle, .thirdTitle {
-    position: relative;
-   /* left: -50%;*/
-    opacity: 0;
-    transition: 1s;
-}
+*/
 
 /******** First Sec End ********/
+
 
 
 /******** Second Section *******/
@@ -568,7 +526,6 @@ section {
 
 #myVideo {
     position: relative;
-    width: 100%;
     z-index: 0;
     top: 0;
     left: 0;
@@ -1159,12 +1116,6 @@ nav {
     height: calc(100vh - 70px);
 }
 /*First Section*/
-.firstSection {
-    width: 190%;
-}
-.whoWeCont {
-    left: 28%;
-}
 
 
 }  /* End (max-width: 1680px) */
@@ -1190,17 +1141,14 @@ nav {
 .container {
     height: calc(100vh - 60px);
 }
+
+
 /*First Section*/
-.spanContainer {
-    font-size: 25px;
-}
-.wwaTextContainer {
-    height: 100%;
-    width: 70%;
-}
-.whoWeCont {
-    width: 1414px;
-}
+
+
+
+/*First Section*/
+
 
 /*Second Section*/
 .indexLogoSecondSection img {
@@ -1299,24 +1247,10 @@ input::placeholder{
 @media screen and (max-width: 1536px) {
 
 /*First Section*/
-.firstSection {
-    width: 185%;
-    justify-content: flex-start;
-    background-position: -10% 50%;
-}
 
-.wwaTextContainer {
-    width: 77%;
-}
 
-.wrapper {
-    width: 1905px;
-    background: url(../rsc/img/fondoMain1536.webp);
-}
 
-.whoWeAre {
-    width: calc(100% - 1905px);
-}
+
 
 /*Second Section*/
 
@@ -1327,9 +1261,7 @@ input::placeholder{
 
 @media screen and (max-width: 1440px) {
 /*first Section*/
-.firstSection {
-    width: 192%;
-}
+
 
 /*Second Section*/
 .indexLogoSecondSection img {
@@ -1375,14 +1307,7 @@ input::placeholder{
 
 /*First Section*/
 
-.wrapper {
-    width: 1700px;
-    background: url(../rsc/img/fondoMain1400.webp);
-}
 
-.whoWeAre {
-    width: calc(100% - 1700px);
-}
 
 /*Second Section*/ 
 .indexLogoSecondSection img {
@@ -1415,34 +1340,13 @@ h1, h2 {
 }
 /*First Section*/
 
-.firstSection {
-    width: 165%;
+.firstTextContainer h1, .firstTextContainer h2 {
+    font-size: 79px;
+    line-height: 88px;
 }
 
-.wrapper {
-    width: 1357px;
-    background: url(../rsc/img/fondoMain1300.webp);
-}
-
-.whoWeAre {
-    width: calc(100% - 1357px);
-}
-
-.spanContainer {
-    font-size: 20px;
-}
-
-.whoWeCont {
-    height: 480px;
-        width: 1150px;
-}
-
-.wwaTextContainer {
-    width: 70%;
-}
-
-.whoWeCont {
-    left: 35%;
+.firstText1 {
+    width: 962px;
 }
 
 /*Second Section*/
@@ -1474,6 +1378,12 @@ h1, h2 {
 }
 
 /*Section Three*/
+
+#myVideo {
+width: 100%;
+}
+
+
 .careerHeading h2 {
     font-size: 130px;
 }
@@ -1540,15 +1450,160 @@ h1, h2 {
 
 /*Fourth Section*/
 
+.fourthSectionContent {
+    background: url('../rsc/img/section4back11366.webp');
+}
+
+.fourthSectionText {
+    height: 310px;
+}
+
+.fourthMainTitle h2 {
+    font-size: 40px!important;
+    line-height: 45px!important;
+}
+
+.fourthMainText p {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.fourthMainLink p {
+    font-size: 16px;
+    line-height: 26px;
+    width: 125px;
+}
+
+.viewRelated p {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.fourthIndexNumber {
+    width: 100%;
+    height: 50px;
+}
+
+.fourthIndexName {
+    height: calc(100% - 50px);
+    padding-bottom: 20px;
+}
+
+.viewRelated {
+    height: 168px;
+}
+
+.fourthIndexTitle {
+    width: 100%;
+    height: calc(100% - 168px);
+}
+
+/*footer*/
+
+footer {
+    width: 1030px;
+}
+
+.footerContainer {
+    height: 550px;
+    width: 550px;
+}
+
+.footerTextContainer {
+    width: 395px;
+    height: 346px;
+}
+
+.footerTextContSectionOne {
+    width: 195px;
+}
+.footerTextContSectionTwo {
+    width: 200px;
+}
+.footerTextContSectionOne h3, .footerTopRight h3, .footerBottomRight h3 {
+    font-size: 26px;
+    line-height: 28px;
+}
+
+.ctc h4 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.ctcInfo p {
+font-size: 14px;
+padding-bottom: 2px;
+}
+
+.allRights p {
+    font-size: 11px;
+}
+
+input::placeholder{
+    font-size: 18px;
+    line-height: 16px;
+}
+
+
 }/* End (max-width: 1366px) */
+
 /* laptop */
-@media screen and (max-width: 1280px) {}
+@media screen and (max-width: 1280px) {
+
+/*First Section*/
+/*Second Section*** On script.js line 14/
+/*third Section*/
+#myVideo {
+     width: auto;
+}
+
+.careerHeading h2 {
+    font-size: 110px;
+}
+
+/*Fourth Section*/
+.careersTextCont {
+    left: 45%;
+}
+input::placeholder{
+    font-size: 16px;
+    line-height: 14px;
+}
+}/* End (max-width: 1280px) */
+
 /* laptop */
-@media screen and (max-width: 1152px) {}
+@media screen and (max-width: 1152px) {
+
+}
 /* laptop */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+.careersTextCont {
+    left: 51%;
+}
+
+.careerHeading h2 {
+    font-size: 95px;
+}
+
+.careerText {
+    width: 674px;
+}
+
+#myVideo {
+     width: 100%;
+}
+
+.fourthSectionText {
+    left: 40%;
+}
+
+
+}/*End (max-width: 1024px)*/
+
 /* tablet */
-@media screen and (max-width: 800px) {}
+@media screen and (max-width: 800px) {
+
+}
 /* tablet */
 @media screen and (max-width: 768px) {}
 /* smat phone */
