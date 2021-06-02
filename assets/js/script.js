@@ -1,16 +1,38 @@
 $( document ).ready(function() {
 
-    $(".container").scroll(function(){
-      console.log(this.scrollLeft)
-    });
+    let sectionPosition = 0;
+    let sectionLeft = 0;
+    let sections = [$("#mainSection").offset().left, $("#ourBrandsSection").offset().left, $("#careerSection").offset().left, $("#blogSection").offset().left, $("footer").offset().left]
     let executed = false;
     let deviceWidth = $(window).innerWidth();
     let deviceHeight = $(window).innerHeight();
+    let menuLink = $(".menuLink");
+    $(menuLink[0]).addClass("linkSelected");
+
+    let footerH3 = $(".footerH3");
+    let footerLinksParr = $(".footerLinksParr");
+    let contactDiv = $(".contactDiv");
+
     console.log("Device Width: "+deviceWidth);
     console.log("Device Height: "+deviceHeight);
         
     $(function() {
-
+      let deploy = (function() {
+        return function() {
+          if (!executed) {
+              executed = true;
+              setTimeout(function(){
+                  dos();
+              },100);
+              setTimeout(function(){
+                  uno();
+              },300);
+              setTimeout(function(){
+                  cero();
+              },500);                        
+          }
+        };
+      })();
 //Responsive 1280//
         if(deviceWidth <=1280 && deviceWidth >1152){
           if(deviceHeight <= 1024 && deviceHeight >657){
@@ -36,7 +58,7 @@ $( document ).ready(function() {
             $(".secondSectButton").css("width", "124px");
             $(".secondSectButton").css("height", "60px");
             $("#myVideo").css("width", "100%");
-          }else if(deviceHeight <= 577 && deviceHeight > 457){
+          }else if(deviceHeight <= 577 && deviceHeight > 457){ // 
             $(".firstText1").css("width", "850px");
             $("#testText").css("fontSize", "70px");
             $("#testText").css("lineHeight", "80px");
@@ -53,12 +75,13 @@ $( document ).ready(function() {
             $("#myVideo").css("width", "100%");
             $(".arrowImg").css("height", "45%");
             $(".fourthIndexName").css("paddingBottom", "8px");
-            $(".footerContainer").css("height", "500px");
-            $(".footerContainer").css("width", "500px");
-            $(".footerTextContainer").css("height", "357px");
+            $(".footerTextContainer").css("height", "310px");
             $(".footerTextContainer").css("width", "316px");
+            $(".footerLinksParr").css("fontSize", "14px");
+            $(".footerH4").css("fontSize", "14px");
+            $(".footerH3").css("fontSize", "24px");
           }else if(deviceHeight <= 457){
-            $(".seconSectContentLogo").css("height", "60px");          
+            $(".seconSectContentLogo").css("height", "60px");
             $(".seconSectContentText ").css("height", "119px");
             $(".seconSectContentText").css("fontSize", "12px");
             $(".seconSectContentText").css("lineHeight", "19px");
@@ -85,34 +108,23 @@ $( document ).ready(function() {
             $(".footerTopLeft").css("height", "69%");
             $(".ctcInfo").css("justifyContent", "flex-end")
             $(".fourthIndexName").css("paddingBottom", "8px");
-            $(".footerH3").css("fontSize", "20px");
+            $(".footerH3").css("fontSize", "16px");
             $(".footerH3").css("lineHeight", "20px");
             $(".footerH4").css("fontSize", "13px");
             $(".footerRespParr").css("fontSize", "8px");
             $(".footerLinksParr").css("fontSize", "8px");
+            $(".far").css("fontSize", "12px");
+            $(".footerInput").css("height", "24px");
+            $("#send").css("height", "24px");
+            $(".footerInput").css("marginTop", "3px");
+            $("#send").css("marginTop", "3px");
+            $(".smLogoCont").css("width", "100%");
+            $(".smLogoContImg").css("height", "20px");
           }
-        }//Responsive 1280//
-
-
-      let deploy = (function() {
-        return function() {
-          if (!executed) {
-              executed = true;
-              setTimeout(function(){
-                  dos();
-              },100);
-              setTimeout(function(){
-                  uno();
-              },300);
-              setTimeout(function(){
-                  cero();
-              },500);                        
-          }
-        };
-      })();
+        }
+//Responsive 1280//
 
         //Menu//
-        let menuLink = $(".menuLink");
         function menuSelected(){
           for(menu of menuLink){
             $(menu).removeClass("linkSelected");
@@ -120,216 +132,300 @@ $( document ).ready(function() {
         }
         //Who We Are//
         $("#wwAreButton").click(function(){
-          menuSelected()
+          menuSelected();
           $(this).addClass("linkSelected");
-
-            $(".container").scrollLeft(0);                
-
-          $(".logo").css("opacity", 1);
-         
+          $(".container").scrollLeft(0);                
+          sectionPosition = 0;
         });
         //Who We Are//
+
         //Our Brands//
-        $("#ourBrandsButton").click(function(){
-          $(".logo").css("opacity", 0);
+        $("#ourBrandsButton").click(function(){      
           menuSelected();
           $(this).addClass("linkSelected");
           deploy();
+          sectionPosition = 1;
         });
         //Our Brands//
+
         //Carrers//
-        $("#careerButton").click(function(){
-          $(".logo").css("opacity", 1);
+        $("#careerButton").click(function(){ 
           menuSelected()
           $(this).addClass("linkSelected");
           deploy();
+          sectionPosition = 2;
         });
         //Blog//
         $("#blogButton").click(function(){
           menuSelected()
           $(this).addClass("linkSelected");
-          $(".logo").css("opacity", 1);
           deploy();
+          sectionPosition = 3;
         });
         //Menu//
 
-        //Logo Animation //
-          var targets = $(".target");
-          var vel = 100;
-            for(let i =0; i<=targets.length; i++){
-                setTimeout(function(){ 
-               // console.log(targets[i]);             
-                $(targets[i]).css("opacity", 1);
-                $(targets[i]).css("left", 0);
-                }, vel);
-                  vel +=200; 
-            }
 
-            setTimeout(function(){
-                $(".target").css("transition", "2s");
-                $(".uno").css("border-radius", "200px 0 0 200px");
-                $(".uno").css("-moz-border-radius", "200px 0 0 200px");
-                $(".uno").css("-webkit-border-radius", "200px 0 0 200px");
-            }, 1500);
-
-            setTimeout(function(){
-                $(".tres").css("width", "200px");
-
-            }, 1800);
-
-            setTimeout(function(){
-                $(".cuatro").css("border-radius", "200px 0 0 200px");
-                $(".cuatro").css("-moz-border-radius", "200px 0 0 200px");
-                $(".cuatro").css("-webkit-border-radius", "200px 0 0 200px");
-            }, 2100);
-
-            setTimeout(function(){
-              $(".containerTotal").css("opacity", 0);              
-            },3500);//Logo Animation //
-
-
+//Mouse Wheel//
+          var scrolling = false
          $(".container").mousewheel(function(event, delta) {
 
-          //Scroll Manual  
-          this.scrollLeft -= (delta * 200);
-          //console.log(delta);
-          event.preventDefault();
-          console.log(this.scrollLeft);
+          //Scroll Automatico///
+            if(delta == -1 && scrolling == false){         
+              if(sectionPosition < 5 ){ 
+                scrolling = true;
+                sectionPosition++;
+                $(".container").scrollLeft(sections[sectionPosition]);
+              }                                    
+            }else if(delta == 1 && scrolling == false){
+              if(sectionPosition >= 0){ 
+                scrolling = true;
+                sectionPosition--;
+                $(".container").scrollLeft(sections[sectionPosition]);
+              }
+            }   
 
-          //Menu Link Highlight
+            switch(sectionPosition){
+              case 0:
+                menuSelected();
+                $(menuLink[0]).addClass("linkSelected");             
+              break;
+
+              case 1:
+                menuSelected();
+                deploy();
+                $(menuLink[1]).addClass("linkSelected");           
+              break;
+
+              case 2:
+                menuSelected();
+                $(menuLink[2]).addClass("linkSelected");           
+              break;
+
+              case 3:
+                menuSelected();
+                $(menuLink[3]).addClass("linkSelected");              
+              break;
+
+              case 4:
+                if(deviceWidth > 1600 ){
+                  footer(800,800);
+                }else if(deviceWidth <=1600 && deviceWidth >1366) {
+                  footer(650,650);
+                }else if(deviceWidth <=1366 && deviceWidth >1280) {
+                  footer(550,550);
+                }else if(deviceWidth <=1280 && deviceWidth >1152) {               
+                  if(deviceHeight >657){
+                    footer(650,650);
+                  }else if(deviceHeight <= 657 && deviceHeight >625){
+                    footer(575,575);
+                  }else if(deviceHeight <= 625 && deviceHeight > 577){
+                    footer(550,550);
+                  }else if(deviceHeight <= 577 && deviceHeight > 457){
+                    footer(500,500);
+                  }else if(deviceHeight <= 457){
+                    footer(390,390);
+                  }
+                }               
+              break;
+            }
+            setTimeout(function(){
+              scrolling = false;
+            },1000);        
+
+      //Footer Function//
+      let footerLinksTime = 0;
+      let footercontactDivTime = 0;
+      function footer(width,height){
+        setTimeout(function(){
+            $(".footerContainer").css("width", width+"px");
+            $(".footerContainer").css("height", height+"px");
+        }, 100);
+        setTimeout(function(){
+            $(footerH3[0]).css("opacity",1);
+            $(footerH3[0]).css("left",0);
+            for(let i =0; i<footerLinksParr.length;i++){
+              footerLinksTime += 150;
+              setTimeout(function(){
+                $(footerLinksParr[i]).css("transform", "translate3d(0px, 0px, 0px)");
+                $(footerLinksParr[i]).css("opacity", "1");
+              },footerLinksTime );
+            }
+            $(".footerLogoImage").css("opacity", 1);
+            setTimeout(function(){
+              $(footerH3[1]).css("opacity",1);
+              $(footerH3[1]).css("left",0);
+              for(let j =0; j<contactDiv.length;j++){
+              footercontactDivTime += 150;
+              setTimeout(function(){
+                $(contactDiv[j]).css("transform", "translate3d(0px, 0px, 0px)");
+                $(contactDiv[j]).css("opacity", "1");
+              },footercontactDivTime );
+            }
+            },150);
+            setTimeout(function(){
+              $(footerH3[2]).css("opacity",1);
+              $(footerH3[2]).css("left",0);
+              $(footerH3[3]).css("opacity",1);
+              $(footerH3[3]).css("left",0);
+              setTimeout(function(){
+                $(".smLogoCont").css("transform","rotateX(0deg)");
+                $(".smLogoCont").css("opacity","1");
+                $(".inputContainer").css("transform","rotateX(0deg)");
+                $(".inputContainer").css("opacity","1");
+              },150)
+            },200);
+            $(".allRights").css("opacity", 1);
+        }, 600);
+      }
+
+//Menu Link Highlight//
           if(deviceWidth >1680){
-            if(this.scrollLeft < 1751){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 1751 && this.scrollLeft < 3649){
-              menuSelected();
-              deploy();
-              $(menuLink[1]).addClass("linkSelected");
-              $(".logo").css("opacity", 0);
-            }else if(this.scrollLeft >= 3649 && this.scrollLeft < 5589){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 5589){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }
+
           }else if(deviceWidth <=1680 && deviceWidth > 1600){
-            if(this.scrollLeft < 1529){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 1529 && this.scrollLeft < 3229){
-              menuSelected();
-              deploy();
-              $(".logo").css("opacity", 0);
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 3229 && this.scrollLeft < 4889){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 4889){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }
+
           }else if(deviceWidth <=1600 && deviceWidth >1440){
-            if(this.scrollLeft < 1400){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 1400 && this.scrollLeft < 3000){
-              menuSelected();
-              deploy();
-              $(".logo").css("opacity", 0);
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 3000 && this.scrollLeft < 4699){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 4699){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }
+
           }else if(deviceWidth <=1440 && deviceWidth > 1400){
-            if(this.scrollLeft < 1339){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 1339 && this.scrollLeft < 2779){
-              menuSelected();
-              deploy();
-              $(".logo").css("opacity", 0);
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 2779 && this.scrollLeft < 4219){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 4219){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }
+
           }else if(deviceWidth <=1400 && deviceWidth > 1366){
-            if(this.scrollLeft < 1299){
-              menuSelected();
-              $(menuLink[0]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 1299 && this.scrollLeft < 2739){
-              menuSelected();
-              deploy();
-              $(".logo").css("opacity", 0);
-              $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 2739 && this.scrollLeft < 4179){
-              menuSelected();
-              $(menuLink[2]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 4179){
-              menuSelected();
-              $(menuLink[3]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
+        
+          }else if(deviceWidth <=1366 && deviceWidth >1280){
+
+            if(this.scrollLeft >= 4900){
+             // footer(550,550);
             }
-          }else if(deviceWidth <=1366){
-            if(this.scrollLeft < 1267){
+          }else if(deviceWidth <=1280 && deviceWidth >1152){
+            if(this.scrollLeft < 1100){
               menuSelected();
               $(menuLink[0]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 1267 && this.scrollLeft < 2631){
+              
+            }else if(this.scrollLeft >= 1100 && this.scrollLeft < 2350){
               menuSelected();
               deploy();
-              $(".logo").css("opacity", 0);
+              
               $(menuLink[1]).addClass("linkSelected");
-            }else if(this.scrollLeft >= 2631 && this.scrollLeft < 3997){
+            }else if(this.scrollLeft >= 2350 && this.scrollLeft < 3700){
               menuSelected();
               $(menuLink[2]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
-            }else if(this.scrollLeft >= 3997){
+              
+            }else if(this.scrollLeft >= 3700){
               menuSelected();
               $(menuLink[3]).addClass("linkSelected");
-              $(".logo").css("opacity", 1);
+              
+            }
+            if(this.scrollLeft >= 4500){
+              //footer(550,550);
+            }
+          }else if(deviceWidth <=1152 && deviceWidth >1024){
+            if(this.scrollLeft < 1000){
+              menuSelected();
+              $(menuLink[0]).addClass("linkSelected");
+              
+            }else if(this.scrollLeft >= 1000 && this.scrollLeft < 2200){
+              menuSelected();
+              deploy();
+              
+              $(menuLink[1]).addClass("linkSelected");
+            }else if(this.scrollLeft >= 2200 && this.scrollLeft < 3300){
+              menuSelected();
+              $(menuLink[2]).addClass("linkSelected");
+              
+            }else if(this.scrollLeft >= 3300){
+              menuSelected();
+              $(menuLink[3]).addClass("linkSelected");
+              
+            }
+            if(this.scrollLeft >= 3900){
+             // footer(600,600);
             }
           }         
-          // END Menu Link Highlight
-
+// END Menu Link Highlight
          });//End mousewheel//
 
-        //main Section//  
-        setTimeout(function(){          
-            $(".wrapper").css("opacity", 1);
-        },4200);
 
-        setTimeout(function(){         
-            $(".firstSection").css("opacity", 1);
-            $(".containerTotal").css("display","none");
-        },4200);
+//////////First Section//////////
+//////////First Section//////////
+//////////First Section////////// 
+        const carouselText = [
+          {text: "Future of real estate.", color: "#eeece6"},
+          {text: "Heart of belonging.", color: "#eeece6"},
+          {text: "Mind of the collective.", color: "#eeece6"}
+        ]
 
-        setTimeout(function() { 
-          $(".firstTitle").css("opacity", "1");
-          $(".firstTitle").css("left", "0");
-        }, 4900);
+        $( document ).ready(async function() {
+          carousel(carouselText, "#feature-text")
+        });
+        let bgColors = ["#fa5800", "#225bb8", "#f9b60c"]; 
+        async function typeSentence(sentence, eleRef, delay = 70) {
+          const letters = sentence.split("");
+          let i = 0;
+          while(i < letters.length) {
+            await waitForMs(delay);
+            $(eleRef).append(letters[i]);
+            i++
+          }
+          return;
+        }
+        async function deleteSentence(eleRef) {
+          const sentence = $(eleRef).html();
+          const letters = sentence.split("");
+          let i = 0;
+          while(letters.length > 0) {
+            await waitForMs(70);
+            letters.pop();
+            $(eleRef).html(letters.join(""));
+          }
+        }
+
+        async function carousel(carouselList, eleRef) {
+            var i = 0;
+            while(i < carouselList.length) {
+              if(i>= carouselList.length-1){
+                  updateFontColor(eleRef, carouselList[i].color)
+                  $(".firstSection").css("background", bgColors[i]);
+                  await typeSentence(carouselList[i].text, eleRef);
+                  await waitForMs(1500);
+                  $(".typing-container").css("opacity", 0);
+                  $(".firstSection").css("background", "#231f20");
+                  isoLogo();
+                  i++
+              }else{
+                      updateFontColor(eleRef, carouselList[i].color)
+                $(".firstSection").css("background", bgColors[i]);
+                await typeSentence(carouselList[i].text, eleRef);
+                await waitForMs(1500);
+                await deleteSentence(eleRef);
+                await waitForMs(500);
+                i++
+              }
+            }
+        }
+
+        function updateFontColor(eleRef, color) {
+          $(eleRef).css('color', color);
+        }
+
+        function waitForMs(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms))
+        }      
+
+        function isoLogo(){
+         // $(".finalSliderContainer").css("display", "flex");
+          setTimeout(function(){
+            $(".logo-text").css("left", 0);
+            $(".logo-text").css("opacity", 1);
+            $(".iso").css("left", 0);
+            $(".iso").css("opacity", 1);
+            setTimeout(function(){
+              $(".slogan").css("opacity",1);
+              $(".slogan").css("top",0);
+            },200);
+          },800);
+
+        }
+//////////First Section//////////
+//////////First Section//////////
+//////////First Section//////////
 
 //////////Second Section//////////
 //////////Second Section//////////
@@ -459,7 +555,10 @@ $( document ).ready(function() {
 //////////Second Section//////////
 //////////Second Section//////////
 //////////Second Section//////////
-        //Third Section//
+
+//////////Third Section//////////
+//////////Third Section//////////
+//////////Third Section//////////
         var pixels = 0;
         $(".arrowButton").click(function(){
             if(pixels < 200){
@@ -494,10 +593,13 @@ $( document ).ready(function() {
           $(".arrowButtonTop").css("cursor", "none");
           $(".buttonText").text("Why join us");         
         });
+//////////Third Section//////////
+//////////Third Section//////////
+//////////Third Section//////////
 
-////// Fourth Section //////
-////// Fourth Section //////
-////// Fourth Section //////
+//////////Fourth Section//////////
+//////////Fourth Section//////////
+//////////Fourth Section//////////
           var fourth = 1;
           var fourthSecIndex = $(".fourthSecIndex");
           var fourthIndexName = $(".fourthIndexName");
@@ -527,9 +629,15 @@ $( document ).ready(function() {
           if(deviceWidth >1600){
             $(fSectionDinamicTitle[0]).css("fontSize", "50px");
             $(fSectionDinamicTitle[0]).css("lineHeight", "60px");
-          }else if(deviceWidth <=1600){
+          }else if(deviceWidth <=1600 && deviceWidth > 1400){
             $(fSectionDinamicTitle[0]).css("fontSize", "40px");
             $(fSectionDinamicTitle[0]).css("lineHeight", "50px");
+          }else if(deviceWidth <=1400 && deviceWidth > 1360){
+            $(fSectionDinamicTitle[0]).css("fontSize", "30px");
+            $(fSectionDinamicTitle[0]).css("lineHeight", "40px");
+          }else if(deviceWidth <=1360){
+            $(fSectionDinamicTitle[0]).css("fontSize", "25px");
+            $(fSectionDinamicTitle[0]).css("lineHeight", "35px");
           }
 
 
@@ -556,9 +664,15 @@ $( document ).ready(function() {
               if(deviceWidth >1600){
                 $(fSectionDinamicTitle[index]).css("fontSize", "50px");
                 $(fSectionDinamicTitle[index]).css("lineHeight", "60px");
-              }else if(deviceWidth <=1600){
+              }else if(deviceWidth <=1600 && deviceWidth > 1400){
                 $(fSectionDinamicTitle[index]).css("fontSize", "40px");
                 $(fSectionDinamicTitle[index]).css("lineHeight", "50px");
+              }else if(deviceWidth <=1400 && deviceWidth > 1360){
+                $(fSectionDinamicTitle[index]).css("fontSize", "30px");
+                $(fSectionDinamicTitle[index]).css("lineHeight", "40px");
+              }else if(deviceWidth <=1360){
+                $(fSectionDinamicTitle[index]).css("fontSize", "25px");
+                $(fSectionDinamicTitle[index]).css("lineHeight", "35px");
               }
 
               if(deviceWidth >1366){
@@ -566,9 +680,7 @@ $( document ).ready(function() {
               }else if(deviceWidth <=1366){
                 $(".fourthSectionContent").css("background", arrImg1366[index]);
                 $(".fourthSectionContent").css("backgroundSize", "cover");
-              }
-              
-
+              }              
           }
 
           setInterval(function(){

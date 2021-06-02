@@ -4,16 +4,14 @@
         <!--META-->
         <meta charset="UTF-8"> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="author" content="Designer: Gustavo Rodriguez / Developer: Gustavo Jaén Vidal">
+        <meta name="author" content="">
         <meta name="copyright" content="Alma Companies">
         <meta name="contact" content="gustavojaen@ollierentals.com">
-        <meta name="description" content="Alma Ventures is a capital allocator that funds, develops, and operates enterprises and mission-based, community-driven initiatives in the real estate industry."> <!--descripcion de la pagina web-->
-        <meta name="keywords" content=""> <!--palabras clave por las que se indexan-->
-        <meta name="robots" content="Index, Follow"> <!--sustituye al robots.txt / el dia que se indexe cambia el content-->
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="robots" content="Index, Follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no"> 
         <!-- ESTILOS -->
-
-        <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
       
          <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -30,36 +28,30 @@
 
     </head>
   <body>
-      <div class="logo">
-        <a href=""><img src="assets/rsc/img/alma-companies-logo.webp" alt="Alma Companies Logo"></a>
-      </div>
-
-    <div class="containerTotal">
-        <div class="logoContainerTotal">
-            <div class="target uno"></div>
-            <div class="target dos"></div>
-            <div class="target tres"></div>
-            <div class="target cuatro"></div>
-            <div class="text"></div>
-        </div>
-    </div>
 
 <!--Section one-->
     <div class="container" >
-      <section class="firstSection">
-        <div class="firstContainer first1">
-          <div class="firstTextContainer firstText1">
-            <h1 id="testText"></h1>
-          </div>
+      <section class="firstSection" id="mainSection">
+        <div class="typing-container">
+          <h1>
+            <span id="sentence" class="sentence"></span>
+            <span id="feature-text"></span>
+            <span class="input-cursor"></span>
+          </h1>
         </div>
-        <div class="firstContainer first2">
-          <div class="firstTextContainer firstText1">
-            <h1 id="testText2"></h1>
-          </div>
-        </div>
-        <div class="firstContainer first3">
-          <div class="firstTextContainer firstText1">
-            <h1 id="testText3"></h1>
+      <div class="finalSliderSectionOne">
+          <div class="finalSliderContainer">
+            <div class="isoLogo">
+              <div class="iso">
+                <img src="assets/rsc/img/iso.webp" alt="">
+              </div>
+              <div class="logo-text">
+                <img src="assets/rsc/img/logo.webp" alt="">
+              </div>
+            </div>
+            <div class="slogan">
+              <h2>Origin of innovation</h2>
+            </div>
           </div>
         </div>
       </section>
@@ -356,29 +348,27 @@
             <div class="footerTextContSectionOne">
 
               <div class="footerTopLeft">
-                <h3 class="footerH3">Company</h3>
+                <h3 class="footerH3 h3Company">Company</h3>
                 <div class="linksContainer">
-                  <span><a href="#"><p class="footerLinksParr">About Us</p></a></span>
-                  <span><a href="#"><p class="footerLinksParr">What We Do</p></a></span>
-                  <span><a href="#"><p class="footerLinksParr">How We Do It</p></a></span>
-                  <span><a href="#"><p class="footerLinksParr">Partners</p></a></span>
-                  <span><a href="#"><p class="footerLinksParr">Get In Touch</p></a></span>
-                  <span><a href="#"><p class="footerLinksParr">Susteinability</p></a></span>
+                  <span><a href="#"><p class="footerLinksParr">Who We Are</p></a></span>
+                  <span><a href="#"><p class="footerLinksParr">Our Brands</p></a></span>
+                  <span><a href="#"><p class="footerLinksParr">Careers</p></a></span>
+                  <span><a href="#"><p class="footerLinksParr">Blog</p></a></span>
                 </div>
               </div>
 
               <div class="footerBottomLeft">
-                <h3 class="footerH3">Connect</h3>
+                <h3 class="footerH3 h3Company">Connect</h3>
                 <div class="smLogoCont">
-                  <a href="#"><img src="assets/rsc/img/linkedInLogo.png" alt="Alma Companies LinkedIn"></a>
+                  <a href="#"><img src="assets/rsc/img/linkedInLogo.png" alt="Alma Companies LinkedIn" class="smLogoContImg"></a>
                 </div>
               </div>
               
             </div>
             <div class="footerTextContSectionTwo" >
               <div class="footerTopRight">
-                <img src="assets/rsc/img/logoFooter.webp" alt="Alma Companies Logo">
-                <h3 class="footerContactCont footerH3">Contact</h3>
+                <img src="assets/rsc/img/logoFooter.webp" alt="Alma Companies Logo" class="footerLogoImage">
+                <h3 class="footerContactCont footerH3 h3Company2">Contact</h3>
                 <div class="contactContainer">
                   <div class="contactDiv">
                     <div class="ctc">
@@ -400,10 +390,10 @@
 
               </div>
               <div class="footerBottomRight">
-                <h3 class="footerH3">Know more</h3>
+                <h3 class="footerH3 h3Company2">Know more</h3>
 
                 <div class="inputContainer">
-                  <input type="text" placeholder="e-mail address_">
+                  <input type="text" placeholder="e-mail address_" class="footerInput">
                   <button id="send" type="submit"><i class="far fa-paper-plane"></i></button>
                 </div>
 
@@ -411,7 +401,7 @@
             </div>
           </div>
           <div class="allRights">
-            <p><em>ALMA Company . All rights reserved 2020</em></p>
+            <p><em>ALMA Company . All rights reserved 2021</em></p>
           </div>
         </div>
       </footer>
@@ -423,6 +413,10 @@
         <a class="menuLink" href="#ourBrandsSection" id="ourBrandsButton">Our Brands</a>
         <a class="menuLink" href="#careerSection" id="careerButton">Careers</a>
         <a class="menuLink" href="#blogSection" id="blogButton">Blog</a>
+      </div>
+
+      <div class="logo">
+        <a href=""><img src="assets/rsc/img/alma-companies-logo.webp" alt="Alma Companies Logo"></a>
       </div>
 
     </nav>
@@ -439,82 +433,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      /*
-  function banner0(){
-      $(".first3").css("zIndex", 1);
-      $(".first2").css("zIndex", 2);
-      $(".first1").css("zIndex", 3);
-      new Typewriter('#testText', {
-        strings: ['Our globally distributed team that challenges the status quo.'],
-        autoStart: true,
-      });  
-      setTimeout(function(){
-        $(".first1").css("width", "100%");
-        $(".first2").css("width", "0%");
-        $(".first3").css("width", "0%");
-      },400);
-    }
-
-    function banner1(){
-      $(".first3").css("zIndex", 2);
-      $(".first2").css("zIndex", 3);
-      $(".first1").css("zIndex", 1);
-      new Typewriter('#testText2', {
-        strings: ['Funding the future of Real Estate.'],
-        autoStart: true,  
-        pauseFor:5000
-      });    
-      setTimeout(function(){
-        $(".first2").css("width", "100%");
-        $(".first1").css("width", "0%");
-        $(".first3").css("width", "0%");
-      },400);
-    }
-
-    function banner2(){
-      $(".first3").css("zIndex", 3);
-      $(".first2").css("zIndex", 1);
-      $(".first1").css("zIndex", 2);
-      new Typewriter('#testText3', {
-        strings: ['Founding companies with tremendous upsides.'],
-        autoStart: true,  
-        pauseFor:5000
-
-      });   
-      setTimeout(function(){
-        $(".first3").css("width", "100%");
-        $(".first1").css("width", "0%");
-        $(".first2").css("width", "0%");
-      },200);
-    }
-
-    function gira(){
-          banner0();
-        setTimeout(function(){
-          banner1();
-        },10000);
-        setTimeout(function(){
-          banner2();
-        },20000);
-    }
-  gira();
-  setInterval(function(){ 
-      gira(); 
-  }, 30000);*/
 
     </script>
   </body>
